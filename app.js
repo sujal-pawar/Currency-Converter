@@ -1,4 +1,4 @@
-const API_KEY = `4ea269df32cc92d81967bbe3`;  // Replace with your actual API key
+const API_KEY = `4ea269df32cc92d81967bbe3`;  
 const BASE_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest`;
 
 const countryList = {
