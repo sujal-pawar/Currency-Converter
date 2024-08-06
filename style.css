@@ -16,15 +16,16 @@ body {
     font-size: 1rem;
 }
 
-.select-conatiner img{
+.select-conatiner img {
     max-width: 2.5rem;
 }
 
-body > div > form > div.dropdown > div.from > div > select,body > div > form > div.dropdown > div.to > div > select{
+body>div>form>div.dropdown>div.from>div>select,
+body>div>form>div.dropdown>div.to>div>select {
     color: #E2E2B6;
 }
 
-body > div{
+body>div {
     background-color: #03346E;
     padding: 2rem;
     border-radius: 1rem;
@@ -42,10 +43,14 @@ body > div{
     align-items: center;
 }
 
-h2 {
+h1 {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
     margin: 1rem;
+    text-shadow: 2px 2px 8px black;
     margin-bottom: 2rem;
-    font-size: 1.5rem;
+    font-size: 2.65rem;
     color: gold;
     text-align: center;
 }
@@ -57,11 +62,14 @@ form {
     gap: 1rem;
 }
 
-.amount, .msg, .dropdown {
+.amount,
+.msg,
+.dropdown {
     width: 100%;
 }
 
-.amount p, .dropdown p {
+.amount p,
+.dropdown p {
     margin-bottom: 0.7rem;
     font-weight: bold;
     font-size: 1rem;
@@ -73,7 +81,7 @@ input[type="text"] {
     border-radius: 0.3125rem;
     border: 0.0625rem solid #C0C0C0;
     font-size: 1rem;
-    
+
 }
 
 .dropdown {
@@ -84,17 +92,19 @@ input[type="text"] {
     width: 60vh;
 }
 
-.from, .to {
+.from,
+.to {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
-body > div > form > div.dropdown{
+body>div>form>div.dropdown {
     height: 20vh;
 }
 
-body > div > form > div.dropdown > div.from > div,body > div > form > div.dropdown > div.to > div{
+body>div>form>div.dropdown>div.from>div,
+body>div>form>div.dropdown>div.to>div {
     display: flex;
     width: 7rem;
     border: 1px solid #03346E;
@@ -120,8 +130,8 @@ select {
 button {
     width: 100%;
     padding: 0.75rem;
-    background-color: #021526;
-    color: #E2E2B6;
+    background-color: #6EACDA;
+    color: black;
     border: 1px solid #E2E2B6;
     border-radius: 0.31rem;
     font-size: 1.15rem;
@@ -131,8 +141,8 @@ button {
 
 button:hover {
     border: 1px solid #E2E2B6;
-    background-color: #6EACDA;
-    color: black;
+    background-color: #021526;
+    color: #E2E2B6;
 }
 
 .msg {

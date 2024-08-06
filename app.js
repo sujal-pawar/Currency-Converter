@@ -1,5 +1,5 @@
-const BASE_URL =
-  "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
+const API_KEY = `4ea269df32cc92d81967bbe3`;  // Replace with your actual API key
+const BASE_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest`;
 
 const countryList = {
   AED: "AE",
@@ -174,11 +174,13 @@ for (let select of dropdowns) {
     let newOption = document.createElement("option");
     newOption.innerText = currCode;
     newOption.value = currCode;
-    if (select.name === "from" && currCode === "USD") {
+
+    if (select.classList.contains('from') && currCode === "USD") {
       newOption.selected = "selected";
-    } else if (select.name === "to" && currCode === "INR") {
+    } else if (select.classList.contains('to') && currCode === "INR") {
       newOption.selected = "selected";
     }
+
     select.append(newOption);
   }
 
@@ -195,16 +197,19 @@ const updateExchangeRate = async () => {
       amtVal = 1;
       amount.value = "1";
     }
-    const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
+    const fromCurrency = fromCurr.value;
+    const toCurrency = toCurr.value;
+    const URL = `${BASE_URL}/${fromCurrency}`;
+    
     let response = await fetch(URL);
     if (!response.ok) {
       throw new Error("Failed to fetch exchange rate");
     }
     let data = await response.json();
-    let rate = data[toCurr.value.toLowerCase()];
+    let rate = data.conversion_rates[toCurrency];
 
     let finalAmount = amtVal * rate;
-    msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
+    msg.innerText = `${amtVal} ${fromCurrency} = ${finalAmount} ${toCurrency}`;
   } catch (error) {
     msg.innerText = "Error: Unable to fetch exchange rate. Please try again later.";
   }
